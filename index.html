@@ -188,7 +188,7 @@ footer{
 </head>
 
 <body>
-
+<audio id="bgMusic" src="soft-piano-music-432727.mp3" preload="auto" loop></audio>
 <div id="overlay"></div>
 
 <script>
@@ -262,7 +262,27 @@ for(let i=0;i<28;i++){
 
 <audio id="bgm" preload="auto" loop></audio>
 
-<script>
+<script>const music = document.getElementById("bgMusic");
+music.volume = 0;
+
+let musicStarted = false;
+
+document.addEventListener("click", () => {
+  if (!musicStarted) {
+    musicStarted = true;
+    music.play();
+
+    let volume = 0;
+    const fadeIn = setInterval(() => {
+      if (volume < 0.8) {
+        volume += 0.01;
+        music.volume = volume;
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 120);
+  }
+});
 function openGift(){
     document.getElementById("overlay").style.opacity="1";
     const song=document.getElementById("song");
@@ -294,4 +314,5 @@ function openGift(){
 </script>
 
 </body>
+
 </html>

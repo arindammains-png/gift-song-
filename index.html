@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ishanvi 💖</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    text-align:center;
+    background:linear-gradient(#ffd9e8,#fff5f9);
+    overflow-x:hidden;
+}
+
+/* BACKGROUND FLOATING HEARTS */
+.bg-heart{
+    position:fixed;
+    font-size:18px;
+    opacity:.15;
+    animation:floatBg 16s linear infinite;
+    pointer-events:none;
+}
+@keyframes floatBg{
+    from{transform:translateY(100vh)}
+    to{transform:translateY(-120vh)}
+}
+
+/* INTRO */
+#intro{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* 🐼 PINK PANDA */
+#panda{
+    width:160px;
+    height:160px;
+    background:#ffc1d9;
+    border-radius:50%;
+    position:relative;
+    box-shadow:0 20px 60px rgba(255,105,180,.4);
+    animation:float 4s ease-in-out infinite;
+}
+
+/* ears */
+.ear{
+    width:55px;
+    height:55px;
+    background:#ff9fc5;
+    border-radius:50%;
+    position:absolute;
+    top:-15px;
+}
+.ear.left{left:10px}
+.ear.right{right:10px}
+
+/* eyes */
+.eye{
+    width:14px;
+    height:18px;
+    background:#4a001f;
+    border-radius:50%;
+    position:absolute;
+    top:60px;
+    animation:blink 5s infinite;
+}
+.eye.left{left:50px}
+.eye.right{right:50px}
+
+/* blush */
+.blush{
+    width:20px;
+    height:10px;
+    background:#ff6fa5;
+    border-radius:50%;
+    position:absolute;
+    top:85px;
+    opacity:.6;
+}
+.blush.left{left:38px}
+.blush.right{right:38px}
+
+/* nose */
+.nose{
+    width:10px;
+    height:8px;
+    background:#4a001f;
+    border-radius:50%;
+    position:absolute;
+    top:82px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* panda anims */
+@keyframes blink{
+    0%,95%,100%{transform:scaleY(1)}
+    97%{transform:scaleY(0.1)}
+}
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+/* GIFT */
+.gift{
+    font-size:38px;
+    margin-top:18px;
+    cursor:pointer;
+    animation:bounce 1.5s infinite;
+}
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+.open-text{
+    margin-top:14px;
+    font-size:20px;
+    opacity:.9;
+}
+
+/* OVERLAY */
+#overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    opacity:0;
+    transition:opacity 1s ease;
+}
+
+/* SONG */
+#song{
+    padding:60px 20px;
+    background:radial-gradient(circle,#2b0014,#120009);
+    color:white;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1.5s ease;
+}
+
+.song-box{
+    background:rgba(255,255,255,.12);
+    padding:30px;
+    border-radius:24px;
+    max-width:760px;
+    margin:auto;
+    box-shadow:0 30px 80px rgba(255,77,136,.35);
+}
+
+/* 🎵 LYRICS — SLOW & FADE */
+.line{
+    display:block;
+    opacity:0;
+    font-size:18px;
+    line-height:2.2;
+    animation:lineFade 3s ease forwards;
+}
+@keyframes lineFade{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* FLOATING HEARTS */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:22px;
+    color:#ff4d88;
+    animation:heartFloat 6s linear forwards;
+}
+@keyframes heartFloat{
+    to{transform:translateY(-110vh);opacity:0}
+}
+
+footer{
+    margin-top:35px;
+    font-size:14px;
+    opacity:.85;
+}
+</style>
+</head>
+
+<body>
+
+<div id="overlay"></div>
+
+<script>
+for(let i=0;i<28;i++){
+    const h=document.createElement("div");
+    h.className="bg-heart";
+    h.innerHTML="💗";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(10+Math.random()*10)+"s";
+    document.body.appendChild(h);
+}
+</script>
+
+<section id="intro">
+    <div id="panda">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="blush left"></div>
+        <div class="blush right"></div>
+        <div class="nose"></div>
+    </div>
+    <div class="gift" onclick="openGift()">🎁</div>
+    <div class="open-text">Open it 💗</div>
+</section>
+
+<section id="song">
+<h1>HERE’S THE SONG FOR YOU ISHANVI 💖💖</h1>
+
+<div class="song-box">
+<p id="lyrics">
+<span class="line">I was lost in the dark till you came my way</span>
+<span class="line">All i think about is you to stay</span>
+<span class="line">Oh my brain is numb for you</span>
+<span class="line">My heart, it beats for you</span>
+<span class="line">These hands wanna pair up with you</span>
+<span class="line">These eyes, they search for youuuuu</span><br>
+
+<span class="line">Oh i can never let you go</span>
+<span class="line">All i live is to see u glow</span>
+<span class="line">And it never makes me low</span>
+<span class="line">Cuz u are pure like a soft white snoww</span><br>
+
+<span class="line">Oh oh oooo</span><br>
+
+<span class="line">Hey you miss</span>
+<span class="line">You always make me bliss</span>
+<span class="line">All i want is just one kiss</span>
+<span class="line">You are perfect , i won't miss</span><br>
+
+<span class="line">He he he</span><br>
+
+<span class="line">I was lost in the dark till you came my way</span>
+<span class="line">All i think about is you to stayyyy</span>
+<span class="line">Oh oh Yeahh</span><br>
+
+<span class="line">Hey you miss</span>
+<span class="line">Just stay with me and dance throughout the night,</span>
+<span class="line">You’re the spark that makes me feel everything right,</span>
+<span class="line">In your arms, I feel so alive,</span>
+<span class="line">With you, my heart will always thrive.</span>
+<span class="line">Oh ohh ohhh</span><br><br>
+
+<span class="line">— With all my heart, Arindam ❤️</span>
+</p>
+</div>
+
+<footer>Made by <strong>Arindam</strong> 💖</footer>
+</section>
+
+<audio id="bgm" preload="auto" loop></audio>
+
+<script>
+function openGift(){
+    document.getElementById("overlay").style.opacity="1";
+    const song=document.getElementById("song");
+    song.style.visibility="visible";
+    song.style.opacity="1";
+    song.scrollIntoView({behavior:"smooth"});
+
+    document.querySelectorAll(".line").forEach((l,i)=>{
+        l.style.animationDelay=(i*1.3)+"s"; // VERY SLOW & PEACEFUL
+    });
+
+    const audio=document.getElementById("bgm");
+    audio.volume=0;
+    audio.play().catch(()=>{});
+    let v=0;
+    const fade=setInterval(()=>{
+        if(v<0.9){v+=0.012;audio.volume=v}else clearInterval(fade);
+    },160);
+
+    setInterval(()=>{
+        const h=document.createElement("div");
+        h.className="heart";
+        h.innerHTML="💗";
+        h.style.left=Math.random()*100+"vw";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),6000);
+    },500);
+}
+</script>
+
+</body>
+</html>
